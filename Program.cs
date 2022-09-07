@@ -36,27 +36,27 @@ bool isCordCorrect(string[] coordPoint, ref Point point)
 
 Point Point1 = new Point(), Point2 = new Point();
 
-Console.Write("Введите координаты точки 1 (x,y,z): ");
+Console.Write("Введите координаты точки A (x,y,z): ");
 string[] coordPoint1 = (Console.ReadLine() ?? String.Empty).Split(',');
 
 if (!isCordCorrect(coordPoint1, ref Point1))
 {
-    Console.WriteLine("Ошибка ввода координаты точки 1.\r\nВыполнение программы будет остановлено.");
+    Console.WriteLine("Ошибка ввода координаты точки A.\r\nВыполнение программы будет остановлено.");
     return;
 }
 
-Console.Write("Введите координаты точки 2 (x,y,z): ");
+Console.Write("Введите координаты точки B (x,y,z): ");
 string[] coordPoint2 = (Console.ReadLine() ?? String.Empty).Split(',');
 
 if (!isCordCorrect(coordPoint2, ref Point2))
 {
-    Console.WriteLine("Ошибка ввода координаты точки 2.\r\nВыполнение программы будет остановлено.");
+    Console.WriteLine("Ошибка ввода координаты точки B.\r\nВыполнение программы будет остановлено.");
     return;
 }
 
 double distance = Math.Sqrt(Math.Pow(Point2.X - Point1.X, 2) + Math.Pow(Point2.Y - Point1.Y, 2) + Math.Pow(Point2.Z - Point1.Z, 2));
 
-Console.WriteLine($"Результат: {Math.Round(distance, 2)}");
+Console.WriteLine($"A ({Point1.X},{Point1.Y},{Point1.Z}); B ({Point2.X},{Point2.Y},{Point2.Z}) -> {Math.Round(distance, 2)}");
 
 
 struct Point
